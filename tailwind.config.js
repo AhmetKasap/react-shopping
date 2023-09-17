@@ -21,7 +21,14 @@ module.exports = {
       },
       colors : {
         'me-orange' : '#FF671D'
+      },
+      width : {
+        '128' : '32rem'
+      },
+      height : {
+        '128' : '32rem'
       }
+
 
 
     },
