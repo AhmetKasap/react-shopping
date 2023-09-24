@@ -19,47 +19,44 @@ const SliderCom = () => {
     <>
       <Slider {...settings}>
 
-        <div className='!flex flex-rows mt-8 gap-2'>
+        <div className='!flex flex-row mt-8 gap-2'>
 
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/1.jpg" className='!w-128 h-128'></Image>
-
+          <div className='!w-full h-192  flex flex-row gap-32'>
+            <Image width={1200} height={1000} src="/slider1.jpg" className='!w-auto  bg-red-300'></Image>
+            
+            <div className='! flex flex-col justify-center items-center'>
+              <h1 className='font-roboto text-4xl'>SEÇİLİ ÜRÜNLERDE</h1>
+              <h1 className='font-roboto text-7xl mt-5 text-me-orange'>%30'A VARAN İNDİRİM</h1>
+            </div>
+            
           </div>
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/10.jpg" className='! w-128 h-128'></Image>
-          </div>
-
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/5.jpg" className='!w-128 h-128'></Image>
-          </div>
-
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/4.jpg" className='!w-128 h-128'></Image>
-          </div>
-
-
         </div>
 
-        <div className='!flex flex-rows mt-8 gap-2'>
 
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/2.jpg" className='!w-128 h-128'></Image>
+        <div className='!flex flex-row mt-8 gap-2'>
 
+          <div className='!w-full h-192  flex flex-row '>
+            <Image width={1200} height={1000} src="/slider2.jpg" className='!w-auto  bg-red-300'></Image>
+
+            
+            <div className='! flex flex-col justify-center items-center ml-16'>
+              <h1 className='font-roboto text-4xl'>AYAKABILARDA FIRSAT</h1>
+              <h1 className='font-roboto text-7xl mt-5 text-me-orange'>SEPETE EK %25 İNDİRİM</h1>
+            </div>
+            
           </div>
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/3.jpg" className='! w-128 h-128'></Image>
-          </div>
-
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/7.jpg" className='!w-128 h-128'></Image>
-          </div>
-
-          <div className='!basis-1/4 flex flex-rows items-center justify-center'>
-            <Image width={1000} height={1000} src="/10.jpg" className='!w-128 h-128'></Image>
-          </div>
-
-
         </div>
+
+      
+
+       
+
+
+        
+
+        
+
+        
 
        
 

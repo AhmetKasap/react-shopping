@@ -23,10 +23,12 @@ module.exports = {
         'me-orange' : '#FF671D'
       },
       width : {
-        '128' : '32rem'
+        '128' : '32rem',
+        '256' : '64rem'
       },
       height : {
-        '128' : '32rem'
+        '128' : '32rem',
+        '192' : '48rem'
       }
 
 
