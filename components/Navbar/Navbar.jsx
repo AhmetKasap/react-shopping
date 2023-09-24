@@ -10,7 +10,7 @@ import Image from 'next/image';
 const Navbar = () => {
   return (
     <>
-        <div className='flex flex-row h-20'>
+        <div className='flex flex-row h-20 '>
             <div className=" basis-1/6 flex flex-row items-center justify-center">
                 <Link href='/'>
                   <Image width={50} height={50} src='/logo.png'></Image>

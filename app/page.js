@@ -1,10 +1,10 @@
 import Navbar from "@/components/Navbar/Navbar";
-import SliderCom from "@/components/SliderCom";
+import SliderCom from "@/components/home/SliderCom";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
-import Card from "@/components/Card";
-import Footer from "@/components/Footer";
-import MiniSlider from "@/components/Navbar/MiniSlider";
+import Card from "@/components/home/Card";
+import Footer from "@/components/home/Footer";
+import MiniSlider from "@/components/home/MiniSlider";
 
 
 export default function Home() {

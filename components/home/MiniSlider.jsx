@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const MiniSlider = () => {
   return (
@@ -7,7 +8,7 @@ const MiniSlider = () => {
             <h1 className=' font-roboto text-6xl'>KEŞFET</h1>
             <h4 className='font-rem text-xl'>En Trend ve En Kaliteli Ürünleri Keşfetmeye Hazır Mısın ?</h4>
 
-            <button className='text-sm font-roboto2 hover:bg-me-orange bg-black border-2 rounded-xl p-3 text-white'>Keşfet</button>
+            <Link href='/discover' className='text-sm font-roboto2 hover:bg-me-orange bg-black border-2 rounded-xl p-3 text-white'>Keşfet</Link>
             <hr/>
 
         </div>
