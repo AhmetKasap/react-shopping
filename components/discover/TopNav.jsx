@@ -3,12 +3,14 @@ import { BsChevronDown,BsFilter } from "react-icons/bs";
 
 
 
-const TopNav = () => {
+const TopNav = (props) => {
   return (
     <>
         <div className='flex flex-row mt-12 justify-between mb-16'>
             <div>
-                <h1 className='text-4xl font-roboto'>Erkek Ayakkabıları (22) </h1> 
+                <h1 className='text-4xl font-roboto'>{props.paramsName === "shoes" ? ("Ayakkabılar") : ('')}  </h1> 
+                <h1 className='text-4xl font-roboto'>{props.paramsName === "clothes" ? ("Giyim") : ('')}   </h1> 
+                <h1 className='text-4xl font-roboto'>{props.paramsName === "accessory" ? ("Aksesuarlar") : ('')}  </h1> 
             </div>
             
 
