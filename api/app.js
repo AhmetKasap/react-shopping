@@ -8,6 +8,10 @@ app.use(bodyParser.urlencoded({extended:false}));  //* artık veriler parse edil
 app.use(bodyParser.json());
 
 
+const cors = require('cors')
+const corsOptions = require('./cors')
+app.use(cors(corsOptions))
+
 app.get('/', (req,res) => {
     res.send('hello')
 })
@@ -39,7 +43,7 @@ app.post('/upload', upload.array('image',3), async (req,res) => {
         brand : result.brand,
         color : result.color,
         size : result.size,
-        image : result.savedImages
+        image : req.savedImages 
 
     })
     await product.save()
@@ -57,11 +61,23 @@ app.post('/upload', upload.array('image',3), async (req,res) => {
 })
 
 
-app.get('prdocut', async (req,res) => {
+app.get('/products', async (req,res) => {
     const products = await Product.find()
 
     return res.status(200).json({products})
 })
+
+app.get('/products/:id', async (req,res) => {
+    
+    const product = await Product.findById(req.params.id)
+    console.log(product)
+
+    return res.status(200).json({product})
+})
+
+
+
+
 
 
 
