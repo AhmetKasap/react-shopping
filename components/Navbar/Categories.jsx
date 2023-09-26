@@ -28,7 +28,7 @@ const Categories = () => {
     
     return (
         <>  
-            <Link href="/" onMouseEnter={() => openMenu()}  className='text-xl font-roboto2  hover:text-me-orange hover:underline underline-offset-8'>Ayakkabı</Link>
+            <Link href="/discover/shoe" onMouseEnter={() => openMenu()}  className='text-xl font-roboto2  hover:text-me-orange hover:underline underline-offset-8'>Ayakkabı</Link>
             <Link href="/" onMouseEnter={() => openMenu2()} className='text-xl font-roboto2   hover:text-me-orange hover:underline underline-offset-8'>Giyim</Link>
             <Link href="/" onMouseEnter={() => openMenu3()}  className='text-xl font-roboto2  hover:text-me-orange hover:underline underline-offset-8'>Aksesuar</Link>
             <Link href="/" onMouseEnter={() => openMenu4()} className='text-xl font-roboto2  hover:text-me-orange hover:underline underline-offset-8'>İndirim</Link>

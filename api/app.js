@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({extended:false}));  //* artık veriler parse edilebilir.
 app.use(bodyParser.json());
 
+app.use(express.static('public'));
 
 const cors = require('cors')
 const corsOptions = require('./cors')
@@ -43,6 +44,8 @@ app.post('/upload', upload.array('image',3), async (req,res) => {
         brand : result.brand,
         color : result.color,
         size : result.size,
+        price : result.price,
+        category : result.category,
         image : req.savedImages 
 
     })

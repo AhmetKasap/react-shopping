@@ -8,9 +8,11 @@ const Card = () => {
 
     useEffect(() => {
         const api = async () => {
-            const response = await fetch('https://fakestoreapi.com/products')
+            const response = await fetch('http://localhost:5000/products', {
+                method: "GET"
+            })
             const data = await response.json()
-            setProducts(data)
+            setProducts(data.products)
         }
 
         api()
@@ -22,23 +24,24 @@ const Card = () => {
     return (
         <>
 
-
-
-            <div className='flex flex-row flex-wrap 	'>
+            <div className='flex flex-row flex-wrap '>
                 {
                     products && products.map(product => {
                         return (
                             <>
-                                <div className='basis-1/4 mb-40 ml-24'>
-                                    <Link href='/'>
-                                        <Image width={550} height={600} src={product.image} className=' w-auto h-128' />
-                                    </Link>
-                                    <div className='flex flex-row items-center justify-between  mx-auto mt-4 '>
-                                        <p className='font-roboto text-lg text-gray-800'> {product.title} </p>
-                                        <p className='font-rem text-lg text-me-orange '> {product.price} TL</p>
+                                <div className='basis-1/3 mb-40'>
+                                    <div className='m-4'>
+                                        <Link href='/'>
+                                            <Image width={1000} height={600} src={"http://localhost:5000/uploads/"+product.image[0]} className=' w-auto h-128' />
+                                        </Link>
+                                        <div className='flex flex-row items-center justify-between  mx-auto mt-4 '>
+                                            <p className='font-roboto text-lg text-gray-800'> {product.title} </p>
+                                            <p className='font-rem text-lg text-me-orange '> {product.price} TL</p>
+                                        </div>
                                     </div>
+                                   
                                 </div>
-                                
+
                             </>
 
 
@@ -54,6 +57,8 @@ const Card = () => {
 
 
             </div>
+
+
 
         </>
     )
