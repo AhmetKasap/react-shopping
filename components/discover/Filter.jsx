@@ -1,11 +1,20 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AiOutlineArrowDown, AiOutlineArrowUp } from "react-icons/ai";
-
+import {useSelector,useDispatch} from 'react-redux'
+import categorySlice from '@/redux/features/categorySlice';
+import { getCategory } from '@/redux/features/categorySlice';
 
 
 
 const Filter = () => {
+    const dispatch = useDispatch()
+    const category = useSelector((state) => state.category.products )
+
+
+
+
+
     const [isGender, setIsGender] = useState(false);
     const [isBrand, setIsBrand] = useState(false);
     const [isPrice, setIsPrice] = useState(false)
@@ -34,17 +43,84 @@ const Filter = () => {
         setIsColor(!isColor);
     };
 
+
+
+    const [categoryName, setCategoryName] = useState()
+
+    useEffect(() => {
+        dispatch(getCategory(categoryName))
+    },[categoryName])
+   
+    console.log(category)
+
+
+
+
+
+
     return (
         <>
 
             <div className='mb-8 flex flex-col items-start ml-1'>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Klasik </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Snekear </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Spor </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Bot </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Basketbol </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Krampon </button>
-                <button className='font-roboto text-lg mt-2 hover:text-me-orange'>Topuklu </button>
+
+                {
+                    categoryName && categoryName ==="classhoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('classhoe')}>Klasik </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('classhoe')}>Klasik </button>
+
+                    )
+                }
+                 {
+                    categoryName && categoryName ==="snekearshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('snekearshoe')}>Snekears </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('snekearshoe')}>Snekears </button>
+
+                    )
+                }
+                 {
+                    categoryName && categoryName ==="sporshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('sporshoe')}>Spor </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('sporshoe')}>Spor </button>
+
+                    )
+                }
+                 {
+                    categoryName && categoryName ==="botshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('botshoe')}>Bot </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('botshoe')}>Bot </button>
+
+                    )
+                }
+                 {
+                    categoryName && categoryName ==="basketballshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('basketballshoe')}>Basketbol </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('basketballshoe')}>Basketbol </button>
+
+                    )
+                }
+                 {
+                    categoryName && categoryName ==="cramponshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('cramponshoe')}>Krampon </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('cramponshoe')}>Krampon </button>
+
+                    )
+                }
+
+{
+                    categoryName && categoryName ==="topukshoe" ? (
+                        <button className='font-roboto text-lg mt-2 text-me-orange hover:text-me-orange' onClick={() => setCategoryName('topukshoe')}>Topuklu </button>
+                    ) : (
+                        <button className='font-roboto text-lg mt-2 hover:text-me-orange' onClick={() => setCategoryName('topukshoe')}>Topuklu </button>
+
+                    )
+                }
+                
             </div>
 
 

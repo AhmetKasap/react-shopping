@@ -70,6 +70,15 @@ app.get('/products', async (req,res) => {
     return res.status(200).json({products})
 })
 
+
+app.get('/products/:category', async (req,res) => {
+    const category = req.params.category
+    console.log("category", category)
+    const products = await Product.find({category})
+
+    return res.status(200).json({products})
+})
+
 app.get('/products/:id', async (req,res) => {
     
     const product = await Product.findById(req.params.id)

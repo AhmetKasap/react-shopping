@@ -6,25 +6,25 @@ const initialState = {
     products:[]
 }
 
-export const getProduct = createAsyncThunk('getProduct', async() => {   //* api isteğimizi atıyoruz.
-    const response = await fetch('http://localhost:5000/products', {
+export const getCategory = createAsyncThunk('getCategory', async(category) => {   //* api isteğimizi atıyoruz.
+    const response = await fetch(`http://localhost:5000/products/${category}`, {
         method : 'GET'
     })
     const data = await response.json()
     return data
 })
 
-export const productSlice = createSlice({
+export const categorySlice = createSlice({
     name : 'products',
     initialState,
     reducers : {
     },
     extraReducers : (builder) => {
-        builder.addCase(getProduct.fulfilled , (state, action) => {     //fulfilled, işlem gerçekleşti, pending = bekleniyor, rejected = error
+        builder.addCase(getCategory.fulfilled , (state, action) => {     //fulfilled, işlem gerçekleşti, pending = bekleniyor, rejected = error
             state.products = action.payload
             console.log('sadasd',state.products)
         }) 
     }
 })
 
-export default productSlice.reducer
+export default categorySlice.reducer
